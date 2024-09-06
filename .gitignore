@@ -1,0 +1,22 @@
+#ignore config tokens
+.env
+
+#ignore test audios
+AUDIO_JU.wav
+
+#ignore output audio
+output.mp3
+output2.mp3
+output3.mp3
+
+
+#Ignore gpt_controller.py
+controller.py
+
+__pycache__
+
+
+
+
+
+
