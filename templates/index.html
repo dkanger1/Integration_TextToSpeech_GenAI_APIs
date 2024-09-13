@@ -31,11 +31,13 @@
     <div id="chat-container"></div>
     <input type="text" id="user-input" placeholder="Digite sua mensagem...">
     <button onclick="sendMessage()">Enviar</button>
+    <button id="voice-input-btn">Falar</button>
     <audio id="audioPlayer" style="display: none;"></audio>
 
     <script>
         const chatContainer = document.getElementById('chat-container');
         const userInput = document.getElementById('user-input');
+        const voiceInputBtn = document.getElementById('voice-input-btn');
 
         function addMessage(message, isUser) {
             const messageElement = document.createElement('div');
@@ -93,6 +95,38 @@
                 addMessage('Erro ao reproduzir áudio', false);
             });
         }
+
+        // Adicione o código para reconhecimento de voz
+        let recognition;
+
+        if ('webkitSpeechRecognition' in window) {
+            recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.lang = 'pt-BR';  // Defina para o idioma desejado
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                userInput.value = transcript;
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Erro no reconhecimento de fala:', event.error);
+            };
+
+            recognition.onend = function() {
+                voiceInputBtn.textContent = 'Falar';
+            };
+        } else {
+            voiceInputBtn.style.display = 'none';
+            console.log('Reconhecimento de fala não suportado neste navegador.');
+        }
+
+        voiceInputBtn.addEventListener('click', function() {
+            if (recognition) {
+                recognition.start();
+                voiceInputBtn.textContent = 'Ouvindo...';
+            }
+        });
 
         userInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {

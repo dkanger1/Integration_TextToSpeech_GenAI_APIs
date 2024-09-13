@@ -5,7 +5,11 @@ import pygame
 import openai
 from mock import chat_with_gpt, generate_audio
 from dotenv import load_dotenv
-# from controller import generate_audio
+import pyaudio
+import wave
+import numpy as np 
+
+# from controller import generate_audio, chat_with_gpt
 load_dotenv()
 
 OPENAI_GPT_TOKEN = os.getenv('OPENAI_GPT_TOKEN')
@@ -19,8 +23,7 @@ app = Flask(__name__)
 
 CHUNK_SIZE = 1024
 VOICE_ID = "7u8qsX4HQsSHJ0f8xsQZ"
-# TEXT_TO_SPEAK = "Olá, testando 1 2 3 testando"
-OUTPUT_PATH = "output2.mp3"
+OUTPUT_PATH = "output6.mp3"
 
 @app.route('/')
 def index():

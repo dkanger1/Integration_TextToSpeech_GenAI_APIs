@@ -1,15 +1,15 @@
 import random
 mock_chat_responses = [
-    "Entendo sua pergunta. Aqui está uma possível solução...",
-    "Interessante! Já considerou as seguintes opções?",
-    "Essa é uma ótima pergunta. Vamos analisar isso passo a passo.",
-    "Baseado no que você disse, aqui estão algumas sugestões:",
-    "Há várias maneiras de abordar isso. Uma delas é...",
-    "Vou compartilhar algumas ideias que podem ajudar nessa situação.",
-    "Essa é uma questão complexa. Vamos começar pelo básico:",
-    "Entendo sua preocupação. Aqui estão algumas dicas que podem ser úteis:",
-    "Boa pergunta! Vamos explorar algumas possibilidades.",
-    "Isso é algo que muitas pessoas se perguntam. Aqui está minha perspectiva:"
+    "Claro que a Terra é plana, senão as pessoas do outro lado cairiam, né?",
+    "Se você não vê algo, então não existe. Simples assim!",
+    "Por que estudar matemática? Eu nunca vou precisar de um triângulo na minha vida!",
+    "Clima global? É só abrir a janela e checar. Tá frio ou calor, pronto!",
+    "Café é só uma sopa de feijão, não entendo o hype.",
+    "Internet é só uma moda passageira, logo a gente volta a usar cartas.",
+    "Pra que vacina? Só comer mais laranja que resolve tudo!",
+    "Computadores nunca vão ser mais rápidos que um humano. Eu já vi o Usain Bolt!",
+    "Leis da física? Eu já quebrei várias delas jogando videogame.",
+    "Se você quiser evitar vírus no computador, é só nunca usar a internet!"
 ]
 
 mock_audio_responses = [
